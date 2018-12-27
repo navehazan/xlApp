@@ -10,8 +10,3 @@
 
 ### Now you can go to your [APP](http://localhost:3001)
 
-##fix update
-
-### change is logggedin to false
-
-### add download button

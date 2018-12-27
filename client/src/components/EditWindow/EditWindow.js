@@ -14,10 +14,9 @@ class EditWindow extends React.Component {
   }
   updateXlInDb = async () => {
     try {
-      const res = await axios.put("http://localhost:3000/api/xls/update", this.props.cells);
-      console.log(res);
+      await axios.put("http://localhost:3000/api/xls/update", this.props.cells);
     } catch (e) {
-      console.log(e);
+      throw Error(e,"Could not update cells in db")
     }
   };
 

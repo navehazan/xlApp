@@ -15,7 +15,7 @@ class Xl extends Component {
       const cells = res.data.data.cells;
       this.props.dispatch(setCells(cells));
     } catch (e) {
-      console.log(e);
+      throw Error(e,"Could not fetch cells from db")
     }
   };
   render() {
