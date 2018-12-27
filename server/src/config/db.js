@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const db = async uri => {
   try {
+    mongoose.set('useFindAndModify', false);
     await mongoose.connect(
       uri,
       { useNewUrlParser: true }

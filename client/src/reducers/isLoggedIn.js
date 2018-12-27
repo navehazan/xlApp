@@ -1,5 +1,5 @@
 
-const isLoggedInReducerDefaultState = false;
+const isLoggedInReducerDefaultState = true;
 export default (state = isLoggedInReducerDefaultState, action) => {
   switch (action.type) {
     case "SET_IS_LOGGED_IN":

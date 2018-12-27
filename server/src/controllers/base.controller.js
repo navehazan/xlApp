@@ -14,14 +14,7 @@ class BaseController {
       .skip(skip)
       .limit(limit);
   }
-  getOne() {
-    return this.model.findOne({});
-  }
-  updateOne(data){
-    return this.model.findOneAndUpdate({}, data, {
-      new: true
-    });
-  }
+
   update(filter, data) {
     return this.model.findByIdAndUpdate(filter._id, data, {
       new: true
