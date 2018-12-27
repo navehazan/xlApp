@@ -19,7 +19,7 @@ class XlAPIController extends BaseAPIController {
   async get(req, res, next) {
     try {
       const result = await this.controller.getXl();
-      return sendResponse(res, result, next);
+      return sendResponse(res, result.cells, next);
     } catch (err) {
       next(new appError(err, "Error occurred"));
     }

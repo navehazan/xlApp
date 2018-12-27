@@ -12,7 +12,7 @@ class Xl extends Component {
   getXl = async () => {
     try {
       const res = await axios.get("http://localhost:3000/api/xls/get");
-      const cells = res.data.data.cells;
+      const cells = res.data.data;
       this.props.dispatch(setCells(cells));
     } catch (e) {
       throw Error(e,"Could not fetch cells from db")
