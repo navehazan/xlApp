@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.textField {
+  width: 400px;
+}
+.error {
+  color: red;
+}
