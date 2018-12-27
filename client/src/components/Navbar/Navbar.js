@@ -25,12 +25,12 @@ const ButtonAppBar = props => {
             XL
           </Typography>
           {props.isLoggedIn ? (
-            <Button component={Link} color="inherit" onClick={onLogOut} to="/register">
+            <Button component={Link} color="inherit" onClick={onLogOut} to="/">
               Log Out
             </Button>
           ) : (
             <Aux>
-              <Button component={Link} color="inherit" to="/register">
+              <Button component={Link} color="inherit" to="/">
                 Register
               </Button>
               <Button component={Link} color="inherit" to="/login">
