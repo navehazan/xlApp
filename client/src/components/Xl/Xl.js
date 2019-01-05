@@ -3,7 +3,7 @@ import axios from "axios";
 import { connect } from "react-redux";
 import { setCells } from "../../actions/cells";
 import ReactDataSheet from "react-datasheet";
-import  "./Xl.scss";
+import "./Xl.scss";
 import { mapCellsToGrid } from "../../utils/mapCellsToGrid";
 class Xl extends Component {
   componentDidMount() {
@@ -15,23 +15,11 @@ class Xl extends Component {
       const cells = res.data.data;
       this.props.dispatch(setCells(cells));
     } catch (e) {
-      throw Error(e,"Could not fetch cells from db")
+      throw Error(e, "Could not fetch cells from db");
     }
   };
   render() {
-    return (
-      <ReactDataSheet
-        data={mapCellsToGrid(this.props.cells)}
-        valueRenderer={cell => cell.value}
-        onCellsChanged={changes => {
-          const grid = this.state.grid.map(row => [...row]);
-          changes.forEach(({ cell, row, col, value }) => {
-            grid[row][col] = { ...grid[row][col], value };
-          });
-          this.setState({ grid });
-        }}
-      />
-    );
+    return <ReactDataSheet data={mapCellsToGrid(this.props.cells)} valueRenderer={cell => cell.value} />;
   }
 }
 const mapStateToProps = ({ cells }) => ({ cells });
